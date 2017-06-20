@@ -5,16 +5,18 @@
 
 html, body{
   margin: 0;
-  padding: 15px;
+  padding: 15px 0;
 }
 
 body{
-  background: linear-gradient(to right, #34ebe9, #d0ffae);
+  /*backup secondary gradient #d0ffae */
+  background: linear-gradient(to right, #34ebe9, #c2ff99);
 }
 
 .container{
 
 }
+
 #wrapper{
   width: auto;
   padding: 20px;
@@ -30,7 +32,6 @@ img{
   display: block;
   margin: 0 auto;
   border-radius: 50%;
-  border: 1px solid #d9d9d9;
   box-shadow: 2px 2px 15px rgba(5, 5, 5, 0.4);
 }
 
@@ -44,6 +45,10 @@ img{
   padding: 15px 0;
 }
 
+.padding-top{
+  padding-top: 15px;
+}
+
 #entry_form{
 
 }
@@ -53,6 +58,7 @@ img{
   max-width: 100%;
   min-height: 300px;
   padding: 5px;
+    border: 1px solid #c4c4c4;
 }
 
 #results:focus{
@@ -66,8 +72,12 @@ img{
 #entry_form input{
   width: 100%;
   height: 40px;
-  border: 1px solid #999;
+  border: 1px solid #c4c4c4;
   padding: 5px;
+}
+
+#entry_form input:focus{
+  outline-color: #34ebe9;
 }
 
 .swap{
@@ -84,14 +94,18 @@ img{
 .drop{
   width: 100%;
   height: 40px;
-  border: 1px solid #999;
+  border: 1px solid #c4c4c4;
   padding: 5px;
+}
+
+.drop:focus{
+  outline-color: #d0ffae;
 }
 
 .break{
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, #34ebe9, #d0ffae);
+  background: linear-gradient(to right, #34ebe9, #c2ff99);
 }
 
 .text{
@@ -113,7 +127,7 @@ input{
 
 }
 
-@media only screen and (max-width: 678px){
+@media only screen and (max-width: 768px){
   #context{
     display: block;
     width: 100%;
@@ -123,5 +137,11 @@ input{
     margin-top: 30px;
     display: block;
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+  #entry_panel{
+    margin-top: 30px;
   }
 }
