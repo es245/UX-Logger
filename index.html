@@ -29,7 +29,7 @@
           </ul>
           <div class="break"></div>
           <br>
-          <img src="img/person-flat.png" width="150px" alt="">
+          <img src="img/person-flat.png" style="width:150px" class="img-responsive" alt="">
           <p style="text-align: center">My github! <a href="http://www.github.com/es245"><button type="button" name="button"><i class="fa fa-github" aria-hidden="true"></i></button></a></p>
         </div>
       </div>
@@ -41,24 +41,15 @@
           <p>The following form allows you to log your entries. Each entry will contain your written recording and your choice of style of a timestamp. The timestamp may contain each measurement from year, all the way to milliseconds. And you may also swap the format to contain the timestamp first, followed by your entry, or vice versa.</p>
           <div class="break"></div>
           <div class="row padding-top">
-            <form id="entry_form" method="post" ng-submit="submitEntry()">
-              <div class="col-lg-5" id="entry_form_input">
-                <input type="text" ng-model="entry" name="entry" placeholder="Record your observations.">
-              </div>
-              <div class="col-lg-2 swap"><i class="fa fa-arrows-h fa-2x"></i></div>
+            <form id="entry_form" name="entry_form" method="post" ng-submit="submitEntry()">
               <div class="col-lg-5">
-                <select class="drop" name="">
+                <select class="drop" name="time_format" form="entry_form" ng-model="time_date_format" ng-options="time.name for time in time_formats" ng-change="changeValue(time_date_format)">
                   <option value="" class="drop_option">Choose your timestamp format.</option>
-                  <option value="" class="drop_option">Y/M/D/H/M/S</option>
-                  <option value="" class="drop_option">S/M/H/D/M/Y</option>
-                  <option value="" class="drop_option">M/D/H/M/S</option>
-                  <option value="" class="drop_option">D/H/M/S</option>
-                  <option value="" class="drop_option">S/H/D/M</option>
-                  <option value="" class="drop_option">M/D/H/M/S</option>
-                  <option value="" class="drop_option">M/D/H/M/S</option>
-                  <option value="" class="drop_option">M/D/H/M/S</option>
-                  <option value="" class="drop_option">M/D/H/M/S</option>
                 </select>
+              </div>
+              <!--<div class="col-lg-2 swap"><i class="fa fa-arrows-h fa-2x"></i></div>-->
+              <div class="col-lg-7" id="entry_form_input">
+                <input type="text" autocomplete="off" ng-model="entry" name="entry" placeholder="Record your observations.">
               </div>
               <div class="col-md-4 col-sm-12 col-lg-4 col-md-offset-4 padding">
                 <input type="submit" name="" value="Submit">
