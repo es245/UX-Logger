@@ -1,12 +1,12 @@
 app.controller('main_controller', ['$scope', '$filter', function($scope, $filter) {
-
+  $scope.time_formats = [
+    {name:'Day/Month/Year/Hour/Min/Sec', format:'dd MMM yyyy H:mm:ss'},
+    {name:'Hour/Min/Sec/Day/Month/Year', format:'H:mm:ss dd MMM yyyy'},
+    {name:'Hour/Minute/Second', format:'H:mm:ss'},
+    {name:'Day/Month/Year', format:'dd MMM yyyy'}
+  ];
   angular.element(document).ready(function () {
-    $scope.time_formats = [
-      {name:'Day/Month/Year/Hour/Min/Sec', format:'dd MMM yyyy H:mm:ss'},
-      {name:'Hour/Min/Sec/Day/Month/Year', format:'H:mm:ss dd MMM yyyy'},
-      {name:'Hour/Minute/Second', format:'H:mm:ss'},
-      {name:'Day/Month/Year', format:'dd MMM yyyy'}
-    ];
+
   	$scope.entry = '';
     $scope.results = '';
     $scope.list = [];
